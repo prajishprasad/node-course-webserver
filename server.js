@@ -26,9 +26,9 @@ app.use((req,res,next)=>{
     next();
 
 });
-app.use((req,res,next)=>{
-    res.render('maintainence'); // This is to prevent other routes from being executed
-});
+// app.use((req,res,next)=>{
+//     res.render('maintainence'); // This is to prevent other routes from being executed
+// });
 // app.get('/',(req,res) => {
 //     // res.send('<h1>Hello Express!</h1>');
 //     res.send({
@@ -61,6 +61,9 @@ app.get('/bad', (req,res) =>{
         code:'1',
         string:'Unable to handle request'
     });
+});
+app.get('/projects', (req,res) =>{
+    res.render('projects.hbs');
 });
 app.listen(port,()=>{
     console.log(`Server is up on port ${port}`);
